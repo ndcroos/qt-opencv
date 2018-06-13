@@ -33,17 +33,20 @@ HEADERS += \
 FORMS += \
         mainwindow.ui
 
+# Includes OpenCV.
+
+# Windows operating systems
 win32: {
       include("c:/dev/opencv/opencv.pri")
    }
 
-   unix: !macx {
-      CONFIG += link_pkgconfig
-      PKGCONFIG += opencv
-   }
+unix: !macx {
+  CONFIG += link_pkgconfig
+  PKGCONFIG += opencv
+}
 
-   unix: macx {
-     INCLUDEPATH += "/usr/local/include"
-     LIBS += -L"/usr/local/lib" \
-      -lopencv_world
-   }
+unix: macx {
+ INCLUDEPATH += "/usr/local/include"
+ LIBS += -L"/usr/local/lib" \
+  -lopencv_world
+}

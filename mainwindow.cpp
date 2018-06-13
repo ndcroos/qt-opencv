@@ -14,6 +14,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/* */
 void MainWindow::on_inputPushButton_pressed()
 {
     QString fileName = QFileDialog::getOpenFileName(this, "Open Input Image", QDir::currentPath(), "Images (*.jpg *.png *.bmp)");
@@ -23,6 +24,7 @@ void MainWindow::on_inputPushButton_pressed()
    }
 }
 
+/* */
 void MainWindow::on_outputPushButton_pressed()
 {
     QString fileName = QFileDialog::getSaveFileName(this,
@@ -45,7 +47,7 @@ void MainWindow::on_outputPushButton_pressed()
    }
 }
 
-
+/* */
 void MainWindow::closeEvent(QCloseEvent *event)
 {
   int result = QMessageBox::warning(this,
@@ -63,6 +65,7 @@ void MainWindow::closeEvent(QCloseEvent *event)
     }
 }
 
+/* */
 void MainWindow::loadSettings()
 {
   QSettings settings("Packt",
@@ -83,6 +86,7 @@ void MainWindow::loadSettings()
     false).toBool());
 }
 
+/* */
 void MainWindow::saveSettings()
 {
  QSettings settings("Packt",
